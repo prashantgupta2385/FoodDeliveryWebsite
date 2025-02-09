@@ -23,15 +23,13 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/order" element={<PlaceOrder/>}/>
-          <Route path="/menu" element={<ExploreMenu/>}/>
-
-          <Route path="/mobile-app" element={<AppDownload/>}/>
+          
             
         </Routes>
 
         
       </div>
-      <Footer/>
+      
      
   
     </>
