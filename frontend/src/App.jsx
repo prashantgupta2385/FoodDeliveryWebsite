@@ -24,13 +24,14 @@ function App() {
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/order" element={<PlaceOrder/>}/>
           <Route path="/menu" element={<ExploreMenu/>}/>
-          <Route path="/contact-us" element={<Footer/>}/>
+
           <Route path="/mobile-app" element={<AppDownload/>}/>
             
         </Routes>
 
         
       </div>
+      <Footer/>
      
   
     </>

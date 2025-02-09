@@ -4,7 +4,7 @@ import { StoreContext } from '../context/StoreContext';
 
 const Navbar = ({setShowLogin}) => {
   const [menu, setMenu] = useState("home");
-  const {navigate}=useContext(StoreContext);
+  const {navigate,cartItems}=useContext(StoreContext);
   const [isOpen, setIsOpen] = useState(false);
   const handler=(item)=>{
     setMenu(item)
@@ -55,9 +55,9 @@ const Navbar = ({setShowLogin}) => {
       <div className="flex items-center space-x-4">
         <img src={assets.search_icon} alt="Search" className="w-6 cursor-pointer" />
         <div className="relative">
-          <img src={assets.bag_icon} alt="Cart" className="w-6 cursor-pointer" />
+          <img onClick={()=>handler("cart")} src={assets.bag_icon} alt="Cart" className="w-6 cursor-pointer" />
           {/* Cart quantity indicator */}
-          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">0</span>
+          <span className="absolute -top-1 -right-1 bg-[#FF6347] text-white text-xs px-2 py-0.5 rounded-full">{Object.values(cartItems).reduce((acc, quantity) => acc + (quantity > 0 ? 1 : 0), 0)}</span>
         </div>
         <button  onClick={()=>{
           setShowLogin(true)
