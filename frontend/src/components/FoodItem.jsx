@@ -3,7 +3,7 @@ import { assets } from '../assets/assets';
 import { StoreContext } from '../context/StoreContext';
 
 const FoodItem = ({ id, name, price, description, image }) => {
-  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart,url} = useContext(StoreContext);
 
   // Ensure the item count is displayed correctly
   
@@ -11,7 +11,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
   return (
     <div className="w-full max-w-sm mx-auto rounded-lg shadow-md transition duration-300 hover:shadow-lg bg-white">
       <div className="relative">
-        <img className="w-full rounded-t-lg" src={image} alt={name} />
+        <img className="w-full rounded-t-lg" src={url+"/images/"+image} alt={name} />
         
         {!cartItems[id]? ( 
           <img
