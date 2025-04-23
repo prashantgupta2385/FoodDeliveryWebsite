@@ -20,7 +20,10 @@ const port = process.env.PORT || 4000;
 
 //middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: ['https://tomato-a-food-delivery-website.onrender.com'], // your actual frontend render domain
+    credentials: true
+  }));
 app.use(express.urlencoded({ extended: true }));
 
 
