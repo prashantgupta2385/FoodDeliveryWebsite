@@ -59,7 +59,7 @@ const PlaceOrder = () => {
   
           if (paymentResponse.data.success) {
             const order = paymentResponse.data.order;
-            console.log(order._id)
+            console.log(order.id)
             const options = {
               key: razorpayKey,// Ensure correct key
               amount: order.amount, 
@@ -75,10 +75,10 @@ const PlaceOrder = () => {
                   razorpay_order_id: response.razorpay_order_id,
                   razorpay_signature: response.razorpay_signature,
                   orderId: paymentResponse.data.orderId,
+                  userId:token._id,
                 },{headers:{token}});
                 console.log(verifyRes)
                 if (verifyRes.data.success) {
-                  
                   alert("Payment Successful!");
                 } else {
                   alert("Payment verification failed!");
