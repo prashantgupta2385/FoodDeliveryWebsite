@@ -6,7 +6,7 @@ export const StoreContext=createContext(null)
 
 const StoreContextProvider=(props)=>{
     const[food_list,setFoodList]=useState([]);
-    const url = import.meta.env.VITE_API_URL;
+    const url = import.meta.env.VITE_API_URL||"https://tomato-a-food-delivery-website.onrender.com";
 
     const[token,setToken]=useState("")
     const [cartItems,setCartItems]=useState({});
